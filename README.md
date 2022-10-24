@@ -100,6 +100,11 @@ and sample with
 python scripts/txt2img.py --prompt "a photograph of an astronaut riding a horse" --plms 
 ```
 
+(EDIT) To run and avoid memory issue, reduce the resolution of output images and set n_samples to 1 as below:
+```
+python scripts/txt2img.py --prompt "a photograph of an astronaut riding a horse" --plms --H 256 --W 256 --n_samples 1
+```
+
 By default, this uses a guidance scale of `--scale 7.5`, [Katherine Crowson's implementation](https://github.com/CompVis/latent-diffusion/pull/51) of the [PLMS](https://arxiv.org/abs/2202.09778) sampler, 
 and renders images of size 512x512 (which it was trained on) in 50 steps. All supported arguments are listed below (type `python scripts/txt2img.py --help`).
 
