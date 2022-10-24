@@ -59,7 +59,7 @@ def load_model_from_config(config, ckpt, verbose=False):
     if len(u) > 0 and verbose:
         print("unexpected keys:")
         print(u)
-
+    model.to(torch.float16) #added this to reduce VRAM usage
     model.cuda()
     model.eval()
     return model
